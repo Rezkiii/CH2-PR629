@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+        .head-container {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+
+        body {
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <header class="head-container">
+        <div class="textlogo">PintarKUR</div>
+        <nav class="nav-head">
+            <ul>
+                <li><a href="{{ url_for('tentang') }}">Tentang KUR</a></li>
+                <li><a href="{{ url_for('penyalur') }}">Daftar Penyalur</a></li>
+                <li><a href="{{ url_for('simulasi') }}">Simulasi</a></li>
+                <li><a href="{{ url_for('analisis') }}">Analisis</a></li>
+            </ul>
+        </nav>
+        <div class="signin">
+            <a href="{{ url_for('login') }}" class="button">Sign In</a>
+            <a href="{{ url_for('daftar') }}" class="button">Sign Up</a>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default" style="margin: auto;">
+                    <div class="panel-body" style="margin: 20px;">
+                        <br>
+                        {% if predict_score <= 50 %}
+                        <p style="margin-bottom: 10px;">Berdasarkan hasil asesmen terhadap profil bisnis Anda, pengajuan kredit ini memiliki risiko <span style="color: green;">RENDAH</span> untuk mengalami <span style="font-weight: bold; color: black;">GAGAL BAYAR</span> dengan probabilitas <span style="font-weight: bold;">{{ '{:.2f}'.format(predict_score) }}%</span>. Silakan ajukan kredit Anda.</p>
+                        {% elif predict_score > 50 %}
+                        <p style="margin-bottom: 10px;">Berdasarkan hasil asesmen terhadap profil bisnis Anda, pengajuan kredit ini memiliki risiko <span style="color: red;">TINGGI</span> untuk mengalami <span style="font-weight: bold; color: black;">GAGAL BAYAR</span> dengan probabilitas <span style="font-weight: bold;">{{ '{:.2f}'.format(predict_score) }}%</span>. Pertimbangkan untuk menurunkan nilai kredit yang ingin Anda ajukan.</p>
+                        {% endif %}
+                        <br>
+                    </div>                    
+                </div>
+            </div>            
+            <div class="col-md-6">
+                <img src="static/images/analisis_form.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+
+.navbar-expand {
+    font-size: larger;
+    background-color: blueviolet;
+}
+
+body{
+    font-family: 'poppins';
+    background-color:#FFF3E5;
+    
+}
+
+.nav-link{
+    margin-right: 20px;
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+
+
+.btn-primary, .btn-outline-primary{
+    border-radius: 40px;
+    padding: 10px 25px;
+}
+
+.hero-section{
+    padding-top: 70px;
+    /* background-color: #FFF3E5; */
+}
+
+p{
+    line-height: 170%;
+}
+
+h1 {
+    position: fixed;
+}
+
+.content-hero{
+    padding-right: 50px;
+}
+
+.search {
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+    position:fixed;
+    top: 58%;
+    left: 50%;
+    text-shadow: 3px 2px 1px grey;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    margin: 50px;
+    margin-right: 150px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+
+
+}
+
+img {
+    height: 345px;
+    margin: 10px;
+    /* margin-top: 5px;
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-bottom: 900px; */
+}
+header.head-container{
+    max-width: 1600px;
+    width: 100%;
+    height: fit-content;
+    margin-inline: auto;
+    background-color: #fd7e14;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding-block: 0.1rem;
+    z-index: 999;
+  }
+  
+  .nav-head ul{
+    display:flex;
+    justify-content: center;
+    padding: 0;
+    gap: 2rem 1rem;
+  }
+  
+  .nav-head li{
+    list-style-type: none;
+  }
+  .nav-head li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 20px;
+    color: #fff3e5;
+    padding: .5rem 1.5rem;
+    transition: all .3s ease-in-out;
+  }
+  .nav-head li a:hover{
+    background-color: #fff3e5;
+    color: #fd7e14;
+    border-radius: 25px;
+  }
+  
+  .signin {
+    margin-right: 0px;
+  }
+  
+  a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+  
+  .textlogo{
+    color: antiquewhite;
+    line-height: 75px;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 35pt;
+    padding-left: 10px;
+  }
+  /* End Header */

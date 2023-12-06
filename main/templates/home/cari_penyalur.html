@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <script src="https://kit.fontawesome.com/044fa3f380.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="head-container">
+        <div class="textlogo">PintarKUR</div>
+        <nav class="nav-head">
+            <ul>
+                <li><a href="{{ url_for('tentang') }}">Tentang KUR</a></li>
+                <li><a href="{{ url_for('penyalur') }}">Daftar Penyalur</a></li>
+                <li><a href="{{ url_for('simulasi') }}">Simulasi</a></li>
+                <li><a href="{{ url_for('analisis') }}">Analisis</a></li>
+            </ul>
+        </nav>
+        <div class="signin">
+            <p><a href="#"><i class="fa-solid fa-circle-user"></i> {{ nama }}</a></p>
+        </div>
+    </header>
+   <main>
+    <div>
+        <article class="pemisah_tabel_dengan_background">
+            <div>
+                <h1>Tabel Daftar Penyalur</h1>
+            </div>
+            <div>
+                <h3><a href= "#">Cari Penyalur Terdekat</a>
+                </h3>
+            </div>
+        </article>
+
+
+        <article class="main">
+            <div class="search">
+        <input class="srch" type="search" name="" placeholder="Cari penyalur berdasarkan nama">
+        <a href="#"> 
+            <button class="kotak_search"><i class="fa-solid fa-magnifying-glass"></i></button></a>
+    </div>
+            <div>
+                <table class="center_text">
+                    <tr>
+                     <th class="tablerev"><strong>No</strong></th>
+                        <th><strong>Jenis Penyalur</strong></th>
+                        <th><strong>Nama Penyalur</strong></th>
+                        <th><strong>Opsi</strong></th>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">1</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">2</td>
+                        <td>Nama</td>
+                        <td>Bank</td>
+                        <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">3</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">4</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+
+                    <tr>
+                        <td class="tablerev">5</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">6</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">7</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">8</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">9</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td class="tablerev">10</td>
+                        <td>Nama</td>
+                     <td>Bank</td>
+                     <td><a href="">Detail</a></td>
+                    </tr>
+                 </table>
+                </div>
+                <section>
+                    <nav class="pageline">
+        <ul class="page">
+            <a href="#page"><li>Previous</li></a>
+            <a href="#page"> <li>Next</li></a>
+            <a href="#page"><li>1</li></a>
+            <a href="#page"><li>2</li> </a>
+            <a href="#page"><li>3</li></a>
+            <a href="#page"><li>4</li></a>
+            <a href="#page"><li>5</li></a>
+            <a href="#page"><li>...</li></a>
+            <a href="#page"><li>20</li></a>
+        </ul>
+    </nav>
+        </section>
+
+    </article>
+   </main>
+   <footer>
+   </footer>
+</body>
+</html>

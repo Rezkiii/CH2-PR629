@@ -1,0 +1,75 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %} {{ title }} {% endblock %}</title>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Roboto:wght@100&display=swap');</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% block content%}
+    {% include "includes/alert.html" %}
+    <header class="head-container">
+        <div class="textlogo">PintarKUR</div>
+        <nav class="nav-head">
+            <ul>
+                <li><a href="{{ url_for('tentang') }}">Tentang KUR</a></li>
+                <li><a href="{{ url_for('penyalur') }}">Daftar Penyalur</a></li>
+                <li><a href="{{ url_for('simulasi') }}">Simulasi</a></li>
+                <li><a href="{{ url_for('analisis') }}">Analisis</a></li>
+            </ul>
+        </nav>
+        <div class="signin">
+            <a href="{{ url_for('login') }}" class="button">Sign In</a>
+            <a href="{{ url_for('daftar') }}" class="button">Sign Up</a>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="static/images/Group2.png">
+                <div class="texthero">
+                    KURaikan Masa Depan Usahamu bersama Kami!
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="formhero">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h1>Sign Up</h1>
+                            <form action="{{ url_for('daftar') }}" role="form" method="post" autocomplete="off">
+                                <div class="form-group form-padding">
+                                    <input type="text" name='nik' class="form-control form-rad" placeholder="NIK">
+                                </div>
+                                <div class="form-group form-padding">
+                                    <input type="text" name="nama" class="form-control form-rad" placeholder="Nama">
+                                </div>
+                                <div class="form-group form-padding">
+                                    <input type="email" name="email" class="form-control form-rad" placeholder="Alamat Email">
+                                </div>
+                                <div class="form-group form-padding">
+                                    <input type="password" name="password" class="form-control form-rad" placeholder="Password">
+                                </div>
+                                <div class="have-account">
+                                    <p>Sudah punya akun? <a href="#">Sign In</a></p>
+                                </div>
+                                <div class="msg">{{ msg }}</div>
+                                <div class="form-group form-padding">
+                                    <input type="submit" class="btn btn-primary btn-lg sign-button" value="Sign Up!">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; Bangkit team (C22-PC778)</p>
+    </div>
+    {% endblock %}
+</body>
+</html>

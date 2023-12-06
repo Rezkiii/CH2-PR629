@@ -1,0 +1,277 @@
+body{
+  transition: all 0.35s linear;
+  background: bisque;
+}
+.main{
+  background: white;
+  background-position: center;
+  background-size: cover;
+  margin: 100px 80px 5px 80px;
+  height: 90vh;
+}
+.pintarkur{
+    font-family: sans-serif; 
+    color: #ff7200;
+}
+header.head-container{
+  max-width: 1600px;
+  width: 100%;
+  height: fit-content;
+  margin-inline: auto;
+  background-color: #fd7e14;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding-block: 0.1rem;
+  z-index: 999;
+}
+
+.nav-head ul{
+  display:flex;
+  justify-content: center;
+  padding: 0;
+  gap: 2rem 1rem;
+}
+
+.nav-head li{
+  list-style-type: none;
+}
+.nav-head li a{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 20px;
+  color: #fff3e5;
+  padding: .5rem 1.5rem;
+  transition: all .3s ease-in-out;
+}
+.nav-head li a:hover{
+  background-color: #fff3e5;
+  color: #fd7e14;
+  border-radius: 25px;
+}
+
+.signin {
+  margin-right: 0px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.textlogo{
+  color: antiquewhite;
+  line-height: 75px;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 35pt;
+  padding-left: 10px;
+}
+/* End Header */
+ .top_text {
+    padding: 5px;
+    background-color: gray;
+    font-size: 17px;
+    font-weight: 400;
+    box-shadow: 0 6px 10px 0 rgba(2, 2, 1, 1.2);
+    overflow: auto;
+  }
+
+  h2{
+    font-family: sans-serif;
+    float: left;
+    margin: 15px 15px 5px 25px;
+  }
+  p{
+    float: left;
+    margin: 15px 15px 5px 90px;
+    color: beige;
+  }
+
+  p a{
+    color: white;
+    text-decoration: none
+  }
+
+p a:hover{
+  color: #ff7200;
+  text-decoration: none;
+}
+
+h1{
+  font-family: sans-serif;
+  margin-left: 35px;
+  float: left;
+  margin: 55px 65px 20px 90px;
+}
+
+h3{
+  background-color: black;
+  color: white;
+  padding:8px;
+  font-size: 17px;
+  border-radius: 3px;
+  font-family: sans-serif;
+  float: right;
+  margin: 55px 80px 20px 95px;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;
+}
+
+h3 a{
+  color: white;
+  text-decoration: none
+}
+
+h3 a:hover{
+color: #ff7200;
+text-decoration: none;
+}
+
+.search{
+  float: left;
+  padding-left: 20px;
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+.srch{
+  font-family: 'Times New Roman';
+  width: 300px;
+  height: 35px;
+  background: rgb(255, 250, 240);
+  border: none;
+  color: black;
+  border-right: none;
+  font-size: 16px;
+  float: left;
+  padding: 10px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.kotak_search:hover{
+  color: #ff7200;
+}
+
+.kotak_search:focus{
+  outline: none;
+}
+
+.srch:focus{
+  outline: none;
+}
+
+.kotak_search{
+  width: 80px;
+  height: 35px;
+  background: rgb(211, 211, 211);
+  border: 2px solid rgb(211, 211, 211);
+  color: gray;
+  font-size: 15px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  transition: 0.2s ease;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+
+
+.center_text {
+  float: left;
+  margin: 20px 120px 20px 70px;
+  padding-left: 30px;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table tr {
+  background: #FFEBCD;
+  border: 1px solid green;
+  padding: 7px;
+}
+table th, table td {
+  border: 1px solid green;
+  padding: 7px;
+  width: 400px;
+  text-align: left;
+  justify-content: center;
+}
+
+.tablerev{
+  width: 10px;
+  height: 10px;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #483D8B;
+  color: white;
+}
+
+section{
+  display: flex;
+  float: right;
+  justify-content: right;
+  align-items: center;
+}
+
+.page{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 35px;
+  margin-top: 0;
+}
+
+.page li {
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  color: black;
+
+}
+
+ul a {
+  text-decoration: none;
+}
+
+.page a li{
+  background-color: #E5E4E2;
+  border: 1px solid black;
+}
+
+.page a:hover li{
+  border-color: #ff7200;
+  color: #ff7200;
+}
+
+.page a.active li {
+  background-color: #ff7200;
+  color: white;
+  border-color: #ff7200;
+  font-weight: 600;
+  box-shadow: 0 0.5rem 1rem #ff7200;
+}
+
+.pageline{
+  margin: 0 80px 100px 100px;
+}

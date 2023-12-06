@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+        .head-container {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+        }
+
+        body {
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <header class="head-container">
+        <div class="textlogo">PintarKUR</div>
+        <nav class="nav-head">
+            <ul>
+                <li><a href="{{ url_for('tentang') }}">Tentang KUR</a></li>
+                <li><a href="{{ url_for('penyalur') }}">Daftar Penyalur</a></li>
+                <li><a href="{{ url_for('simulasi') }}">Simulasi</a></li>
+                <li><a href="{{ url_for('analisis') }}">Analisis</a></li>
+            </ul>
+        </nav>
+        <div class="signin">
+            <a href="{{ url_for('login') }}" class="button">Sign In</a>
+            <a href="{{ url_for('daftar') }}" class="button">Sign Up</a>
+        </div>
+    </header>
+    <div class="hero">
+        <h3 style="font-weight: bold; color:black">Analisis Risiko Kredit</h3>
+        <p style="text-align: left;">
+            Fitur analisis memberikan Anda estimasi risiko pengajuan kredit untuk bisnis Anda menggunakan model Machine Learning. Karena keterbatasan data 
+            terkait Kredit Usaha Rakyat (KUR) yang beredar secara publik, model ini dibentuk dari data SBA (Small Business Agreement) Loan yang merupakan program
+            kredit untuk bisnis kecil di Amerika Serikat. 
+        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <form action="{{ url_for('predict')}}" role="form" method="post">
+                            <div class="form-group form-padding">
+                                <br>
+                                <h4 style="font-weight: bold;">Informasi Bisnis</h4>
+                                <div class="mb-3">
+                                    <label class="form-label">Negara Bagian (USA)</label>
+                                    <select name="state" class="form-select" aria-label="State">
+                                        <option selected>Pilih lokasi negara bagian Anda</option>
+                                        <option value="1">AK - Alaska</option>
+                                        <option value="2">AL - Alabama</option>
+                                        <option value="3">AR - Arkansas</option>
+                                        <option value="4">AZ - Arizona</option>
+                                        <option value="5">CA - California</option>
+                                        <option value="6">CO - Colorado</option>
+                                        <option value="7">CT - Connecticut</option>
+                                        <option value="8">DC - District of Columbia</option>
+                                        <option value="9">DE - Delaware</option>
+                                        <option value="10">FL - Florida</option>
+                                        <option value="11">GA - Georgia</option>
+                                        <option value="12">HI - Hawaii</option>
+                                        <option value="13">IA - Iowa</option>
+                                        <option value="14">ID - Idaho</option>
+                                        <option value="15">IL - Illinois</option>
+                                        <option value="16">IN - Indiana</option>
+                                        <option value="17">KS - Kansas</option>
+                                        <option value="18">KY - Kentucky</option>
+                                        <option value="19">LA - Louisiana</option>
+                                        <option value="20">MA - Massachusetts</option>
+                                        <option value="21">MD - Maryland</option>
+                                        <option value="22">ME - Maine</option>
+                                        <option value="23">MI - Michigan</option>
+                                        <option value="24">MN - Minnesota</option>
+                                        <option value="25">MO - Missouri</option>
+                                        <option value="26">MS - Mississippi</option>
+                                        <option value="27">MT - Montana</option>
+                                        <option value="28">NC - North Carolina</option>
+                                        <option value="29">ND - North Dakota</option>
+                                        <option value="30">NE - Nebraska</option>
+                                        <option value="31">NH - New Hampshire</option>
+                                        <option value="32">NJ - New Jersey</option>
+                                        <option value="33">NM - New Mexico</option>
+                                        <option value="34">NV - Nevada</option>
+                                        <option value="35">NY - New York</option>
+                                        <option value="36">OH - Ohio</option>
+                                        <option value="37">OK - Oklahoma</option>
+                                        <option value="38">OR - Oregon</option>
+                                        <option value="39">PA - Pennsylvania</option>
+                                        <option value="40">RI - Rhode Island</option>
+                                        <option value="41">SC - South Carolina</option>
+                                        <option value="42">SD - South Dakota</option>
+                                        <option value="43">TN - Tennessee</option>
+                                        <option value="44">TX - Texas</option>
+                                        <option value="45">UT - Utah</option>
+                                        <option value="46">VA - Virginia</option>
+                                        <option value="47">VT - Vermont</option>
+                                        <option value="48">WA - Washington</option>
+                                        <option value="49">WI - Wisconsin</option>
+                                        <option value="50">WV - West Virginia</option>
+                                        <option value="51">WY - Wyoming</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Apakah bisnis Anda termasuk dalam area urban / rural?</label>
+                                    <select name= "urban_area" class="form-select" aria-label="Default select example">
+                                        <option value="1">Urban</option>
+                                        <option value="2">Rural</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Sektor Bisnis</label>
+                                    <select name="business_sector" class="form-select" aria-label="Default select example">
+                                        <option selected>Apa sektor bisnis Anda?</option>
+                                        <option value="1">11 - Agriculture, forestry, fishing and hunting</option>
+                                        <option value="2">21 - Mining, quarrying, and oil and gas extraction</option>
+                                        <option value="3">22 - Utilities</option>
+                                        <option value="4">23 - Construction</option>
+                                        <option value="5">31 - Manufacturing</option>
+                                        <option value="6">42 - Wholesale trade</option>
+                                        <option value="7">44 - Retail trade</option>
+                                        <option value="8">48 - Transportation and warehousing</option>
+                                        <option value="9">51 - Information</option>
+                                        <option value="10">52 - Finance and insuranceo</option>
+                                        <option value="11">53 - Real estate and rental and leasing</option>
+                                        <option value="12">54 - Professional, scientific, and technical services</option>
+                                        <option value="13">55 - Management of companies and enterprises</option>
+                                        <option value="14">56 - Administrative/support & waste management/remediation Service</option>
+                                        <option value="15">61 - Educational services</option>
+                                        <option value="16">62 - Health care and social assistance</option>
+                                        <option value="17">71 - Arts, entertainment, and recreation</option>
+                                        <option value="18">72 - Accommodation and food services</option>
+                                        <option value="19">81 - Other services (except public administration)</option>
+                                        <option value="20">92 - Public administration</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Bisnis Baru</label>
+                                    <select name="new_existing_business" class="form-select" aria-label="Default select example">
+                                        <option selected>Pilih "iya" jika usia bisnis Anda belum 2 tahun</option>
+                                        <option value="2">Iya</option>
+                                        <option value="1">Tidak</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Franchise</label>
+                                    <select name="has_franchise" class="form-select" aria-label="Default select example">
+                                        <option selected>Apakah Anda memiliki franchise?</option>
+                                        <option value="1">Iya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div> 
+                                <div class="mb-3">
+                                    <label>Jumlah Karyawan</label>
+                                    <input type="text" name="number_of_employee" class="form-control" placeholder="Masukkan jumlah karyawan saat ini, misal: 40">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Tenaga Kerja Baru</label>
+                                    <input type="text" name="created_job" class="form-control" placeholder="Masukkan jumlah karyawan yang akan ditambah jika kredit diterima, misal: 10">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Tenaga Kerja Bertahan</label>
+                                    <input type="text" name="retained_job" class="form-control" placeholder="Masukkan jumlah karyawan yang akan dipertahankan jika kredit diterima, misal: 40">
+                                </div>
+                                <br>
+                                <h4 style="font-weight: bold;">Pengajuan Kredit</h4>
+                                <div class="mb-3">
+                                    <label>Jaminan Harta (Bangunan)</label>
+                                    <select name="real_estate" class="form-select" aria-label="Default select example">
+                                        <option selected>Apakah pengajuan kredit Anda disertai jaminan berupa bangunan?</option>
+                                        <option value="1">Iya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Dokumentasi Kredit</label>
+                                    <select name="loan_documentation" class="form-select" aria-label="Default select example">
+                                        <option selected>Pilih jenis dokumentasi kredit Anda</option>
+                                        <option value="1">LowDoc</option>
+                                        <option value="0">Non LowDoc</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Jumlah Kredit Diajukan</label>
+                                    <input type="text" name="loan_requested" class="form-control" placeholder="Nilai kredit diajukan (dalam USD, misal: 10000)">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Waktu Peminjaman (Bulan)</label>
+                                    <input type="text" name="term" class="form-control" placeholder="Waktu peminjaman (dalam bulan)">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Kredit yang Dijamin SBA</label>
+                                    <input type="text" name="sba_covered" class="form-control" placeholder="Nilai kredit yang dijamin oleh SBA (dalam USD, misal: 4480)">
+                                </div>
+                                <div class="mb-3">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
+                                <br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <br><br><br>
+                <img src="static/images/analisis_form.png">
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
